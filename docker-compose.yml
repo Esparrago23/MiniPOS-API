@@ -3,10 +3,13 @@ services:
     build: .
     container_name: minipos-api
     restart: unless-stopped
+    env_file:
+      - .env
     environment:
-      SECRET_KEY: ${SECRET_KEY:-change-this-development-secret}
-      ACCESS_TOKEN_EXPIRE_MINUTES: ${ACCESS_TOKEN_EXPIRE_MINUTES:-480}
-      DATABASE_URL: ${DATABASE_URL:-sqlite:///./data/minipos.db}
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${ACCESS_TOKEN_EXPIRE_MINUTES}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS}
+      DATABASE_URL: ${DATABASE_URL}
+      SECRET_KEY: ${SECRET_KEY}
     ports:
       - "8000:8000"
     volumes:

@@ -303,17 +303,12 @@ GET /sales/1
 Authorization: Bearer TOKEN
 ```
 
-## Archivos que debe consumir Flutter despues
+## Conexion desde Flutter
 
-En la app Flutter, la siguiente sesion deberia crear:
+La app MiniPOS recibe la URL de la API por `--dart-define`:
 
-```text
-lib/core/network/api_client.dart
-lib/core/network/api_endpoints.dart
-lib/features/auth/data/models/user_model.dart
-lib/features/auth/data/models/auth_response_model.dart
-lib/features/auth/data/datasources/auth_remote_datasource.dart
-lib/features/auth/data/repositories/auth_repository_impl.dart
+```powershell
+flutter run --dart-define=API_BASE_URL=http://127.0.0.1:8000
 ```
 
-El repositorio temporal que esta en `lib/app.dart` debe reemplazarse por `AuthRepositoryImpl`.
+Usa `http://10.0.2.2:8000` para Android Emulator y `http://IP_DEL_SERVIDOR:8000` para celular fisico o servidor remoto.
