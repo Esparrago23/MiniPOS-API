@@ -142,9 +142,3 @@ Para celular fisico usa la IP de la computadora o del servidor:
 ```powershell
 flutter run --dart-define=API_BASE_URL=http://IP_DEL_SERVIDOR:8000
 ```
-
-## Deploy
-
-Para un despliegue simple en EC2 con Docker, revisa `EC2_DEPLOY.md`.
-
-Para publicar el proyecto como portafolio, no publiques archivos `.env`, bases de datos locales ni APKs generados. El repositorio debe incluir solo codigo fuente, `Dockerfile`, `docker-compose.yml`, `.env.example` y documentacion.
